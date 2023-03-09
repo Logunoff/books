@@ -88,14 +88,14 @@ body {
     background-image: url('../../assets/images/eye-opened.svg');
 }
 
-.auth-layout__form p {
+/* .auth-layout__form p {
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.2px;
     color: var(--grey40);
     padding-left: 13px;
-}
+} */
 
 .registration__button {
     width: 416px;

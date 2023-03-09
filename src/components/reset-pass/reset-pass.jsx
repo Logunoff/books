@@ -12,12 +12,7 @@ import '../../pages/forgot-password/forgot-password.css';
 import './reset-pass.css';
 
 export const ResetPass = ({ code }) => {
-    // const [showStatus, setShowStatus] = useState(false);
     const [forgotPassStatus, setforgotPassStatus] = useState(null);
-
-    // const handleStatusFormClick = {
-    //     if(forgotPassStatus)
-    // };
 
     const {
         register,
@@ -83,7 +78,7 @@ export const ResetPass = ({ code }) => {
                     <p className='reset-pass__info'>После сохранения войдите в библиотеку, используя новый пароль</p>
                 </div>
             </div>
-            {forgotPassStatus && <FormWarning forgotPassStatus={forgotPassStatus} />}
+            {forgotPassStatus && <FormWarning status={forgotPassStatus} />}
         </form>
     );
 };

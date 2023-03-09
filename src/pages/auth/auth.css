@@ -40,43 +40,6 @@ body {
     margin: 36px 0 20px;
 }
 
-/* .auth__input-password input:focus ~ .auth__button--show-password,
-.auth__input-password input:not(:invalid) ~ .auth__button--show-password {
-    display: block;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
-}
-
-.auth__button--show-password {
-    display: none;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
-}
-
-.auth__button--show-password::after {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    content: url('../../assets/images/eye-closed.svg');
-}
-
-.auth__button--show-password.show::after {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    content: url('../../assets/images/eye-opened.svg');
-} */
-
 .auth__input-password input:focus ~ .auth__button--show-password,
 .auth__input-password input:not(:invalid) ~ .auth__button--show-password {
     display: block;
@@ -110,8 +73,9 @@ body {
     color: var(--dark);
 }
 
-.auth__input input:focus ~ .auth__placeholder,
-.auth__input input:not(:focus):valid ~ .auth__placeholder {
+.auth__input-error ~ .auth__placeholder,
+.auth__input:focus ~ .auth__placeholder,
+.auth__input:not(:focus):valid ~ .auth__placeholder {
     position: absolute;
     top: 6px;
     left: 12px;
@@ -128,7 +92,7 @@ body {
     line-height: 16px;
     letter-spacing: 0.2px;
     color: var(--grey40);
-    padding-left: 13px;
+    padding-left: 12px;
 }
 
 .auth__button--submit {
@@ -180,7 +144,7 @@ body {
 
 .auth__error {
     padding-left: 12px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.2px;

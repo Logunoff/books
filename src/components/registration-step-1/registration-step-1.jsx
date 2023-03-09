@@ -13,7 +13,6 @@ export const RegistrationStep1 = ({ onClick }) => {
     const dispatch = useDispatch();
 
     const [showPassword, setShowPassword] = useState(false);
-    // const [type, setType] = useState('password');
 
     const {
         register,
@@ -39,6 +38,7 @@ export const RegistrationStep1 = ({ onClick }) => {
             <h5>1 шаг из 3</h5>
             <div className='registration__input'>
                 <input
+                    required={true}
                     {...register('username', {
                         required: 'Поле не может быть пустым',
                         pattern: /^[A-Za-z0-9]+$/,

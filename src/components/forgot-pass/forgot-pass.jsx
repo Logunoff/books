@@ -23,6 +23,7 @@ export const ForgotPass = () => {
     });
 
     const onSubmit = (data) => {
+        console.log(data);
         axios
             .post(apiForgotPassword, { ...data })
             .then((response) => {
