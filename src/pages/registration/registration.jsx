@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { STATUS_REGISTRATION } from '../../constants/responce-status';
 import { FormWarning } from '../../components/form-warning/form-warning';
 import { RegistrationStep1 } from '../../components/registration-step-1/registration-step-1';
 import { RegistrationStep2 } from '../../components/registration-step-2/registration-step-2';
@@ -12,35 +13,45 @@ import './registration.css';
 export const Registration = () => {
     const navigate = useNavigate();
     const [step, setStep] = useState(1);
+    const [localData, setLocalData] = useState(null);
     // const [requestStatus, setRequestStatus] = useState(null);
     // const [actionStatus, setActionStatus] = useState(false);
-    const handleStep = () => {
-        setStep(step + 1);
+    const { regRequest, isLoading, responseStatus } = useRegistrationRequest();
+
+    const handleStep = () => setStep(step + 1);
+
+    const onRequestFinally = () => setStep(4);
+
+    const handleSubmit = (data) => {
+        setLocalData(data);
+        regRequest(data, onRequestFinally);
     };
 
-    const { regRequest, isLoading, errorStatus } = useRegistrationRequest();
+    const toAuth = () => navigate('/auth');
+    const toReg = () => window.location.reload();
+    const onRepeatSubmit = () => regRequest(localData, onRequestFinally);
 
-    const onSuccess = () => {
-        setStep(4);
-    };
-
-    const toAuth = () => {
-        navigate('/auth');
-    };
-    const toReg = () => {
-        navigate('/registration');
-    };
     const onClickForm = () => {
-        switch (errorStatus) {
+        switch (responseStatus) {
             case 200:
                 return toAuth;
             case 400:
                 return toReg;
             default:
-                return null;
+                return onRepeatSubmit;
         }
     };
-    const handleSubmit = (data) => regRequest(data, onSuccess);
+
+    const getModalStatus = () => {
+        switch (responseStatus) {
+            case 200:
+                return STATUS_REGISTRATION[200];
+            case 400:
+                return STATUS_REGISTRATION[400];
+            default:
+                return STATUS_REGISTRATION.default;
+        }
+    };
 
     return (
         <div className='auth-layout'>
@@ -52,9 +63,9 @@ export const Registration = () => {
                     case 2:
                         return <RegistrationStep2 onClick={handleStep} />;
                     case 3:
-                        return <RegistrationStep3 onSubmitForm={handleSubmit} onClick={handleStep} />;
+                        return <RegistrationStep3 onSubmitForm={handleSubmit} />;
                     case 4:
-                        return <FormWarning status={errorStatus} action={onClickForm} />;
+                        return <FormWarning status={getModalStatus()} action={onClickForm()} />;
                     default:
                         return null;
                 }
