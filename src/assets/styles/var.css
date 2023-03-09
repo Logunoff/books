@@ -1,0 +1,16 @@
+:root {
+    --accent: #ff5253;
+    --white: #fff;
+    --dark: #363636;
+    --dark30: #3636364d;
+    --grey70: #727272;
+    --grey40: #a7a7a7;
+    --grey20: #bfc4c9;
+    --grey10: #ebebeb;
+    --grey5: #f9f9fa;
+    --negative: #f42c4f;
+    --red: #f83600;
+    --pink: #feebea;
+    --btn-pressed: 233.73deg, #f83600 -16.08%, #f9d423 327.37%;
+    --btn-hover: 231.58deg, #f83600 -53.35%, #f9d423 297.76%;
+}

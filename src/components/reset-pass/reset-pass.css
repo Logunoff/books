@@ -1,0 +1,64 @@
+.reset-pass-layout__form {
+    width: 528px;
+    max-height: 100%;
+    border-radius: 16px;
+    background-color: var(--white);
+    padding: 0;
+}
+
+.reset-pass-layout__form.server-response {
+    display: none;
+}
+
+.reset-pass__form {
+    padding: 48px 56px;
+}
+
+.reset-pass__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+    margin: 0 0 32px;
+}
+
+.reset-pass__div-input {
+    position: relative;
+}
+
+.reset-pass__placeholder {
+    position: absolute;
+    pointer-events: none;
+    top: 81px;
+    left: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+}
+
+.reset-pass-conf__div-input {
+    margin: 18px 0 34px;
+    position: relative;
+}
+
+.reset-pass-conf__placeholder {
+    position: absolute;
+    pointer-events: none;
+    top: 18px;
+    left: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+}
+
+.reset-pass__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: var(--grey70);
+}

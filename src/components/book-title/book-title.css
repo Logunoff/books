@@ -1,0 +1,11 @@
+.book-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+.paint-filter {
+    color: var(--accent);
+}

@@ -1,0 +1,44 @@
+main {
+    display: flex;
+    flex: 1;
+}
+
+.main-page__books {
+    width: 100%;
+}
+
+.main-page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 41px 165px 0;
+    position: relative;
+}
+
+.main-page > .aside.hide {
+    display: block;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+    .main-page > .aside.hide {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .main-page {
+        margin: 30px 64px 0;
+    }
+    .main-page > .aside.hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .main-page {
+        margin: 11px 16px 0;
+    }
+    .main-page > .aside.hide {
+        display: none;
+    }
+}

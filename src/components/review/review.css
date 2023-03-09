@@ -1,0 +1,90 @@
+.review__user {
+  display: flex;
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.review__user p {
+  margin: 0 0 0 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1px;
+  color: var(--grey70);
+}
+
+.review__user :before {
+  position: absolute;
+  content: url('../../assets/images/stars.svg');
+  top: 50px;
+  left: 0px;
+}
+
+.review > p:last-child {
+  margin-bottom: 42px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+.review__user-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  .review__user {
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .review__user {
+    display: none;
+  }
+
+  .review__user-mobile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .review__user-mobile :before {
+    position: absolute;
+    content: url('../../assets/images/stars.svg');
+    top: 54px;
+    left: 0px;
+  }
+
+  .review__user-mobile img {
+    width: 32px;
+    height: 32px;
+    margin-right: 18px;
+  }
+
+  .review__user-mobile-wrapper p:first-child {
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    line-height: 20px !important;
+    margin-bottom: 3px !important;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1px;
+    color: var(--grey70);
+  }
+
+  .review__user-mobile-date {
+    margin-bottom: 0px;
+    color: var(--grey70);
+  }
+
+  .review > p:last-child {
+    margin-bottom: 23px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

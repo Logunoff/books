@@ -1,0 +1,30 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(54, 54, 54, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.loading div {
+    height: 150px;
+    width: 300px;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .loading div {
+        height: 80px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .loading div {
+        height: 50px;
+    }
+}

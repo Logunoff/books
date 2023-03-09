@@ -1,0 +1,124 @@
+.error {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    background-color: var(--pink);
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 55px;
+    left: 165px;
+    border: 1px solid var(--negative);
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.error p {
+    position: relative;
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+    padding-left: 88px;
+}
+
+.error p::after {
+    position: absolute;
+    content: url('../../assets/images/warning-circle-24.svg');
+    top: -3px;
+    left: 31px;
+}
+
+.error button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    border-style: none;
+    background: none;
+}
+
+.error button::after {
+    position: absolute;
+    content: url('../../assets/images/close-24.svg');
+    top: 8px;
+    left: 6px;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+    .error {
+        height: 76px;
+        top: 55px;
+        left: 165px;
+        max-width: 900px;
+    }
+    .error p {
+        font-size: 14px;
+        line-height: 16px;
+        padding-left: 52px;
+    }
+    .error p::after {
+        position: absolute;
+        content: url('../../assets/images/warning-circle-18.svg');
+        top: -3px;
+        left: 17px;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .error {
+        height: 76px;
+        top: 55px;
+        left: 64px;
+        max-width: 640px;
+    }
+    .error p {
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 52px;
+    }
+
+    .error p::after {
+        position: absolute;
+        content: url('../../assets/images/warning-circle-18.svg');
+        top: -3px;
+        left: 17px;
+    }
+
+    .error button::after {
+        position: absolute;
+        content: url('../../assets/images/close-16.svg');
+        top: 8px;
+        left: 21px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .error {
+        top: 55px;
+        left: 20px;
+        max-width: 280px;
+    }
+    .error p {
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 52px;
+    }
+    .error p::after {
+        position: absolute;
+        content: url('../../assets/images/warning-circle-18.svg');
+        top: 0px;
+        left: 16px;
+    }
+
+    .error button::after {
+        position: absolute;
+        content: url('../../assets/images/close-16.svg');
+        top: -8px;
+        left: 3px;
+    }
+}

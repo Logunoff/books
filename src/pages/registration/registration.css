@@ -1,0 +1,148 @@
+body {
+    max-width: none;
+}
+
+.registration__title {
+    padding-bottom: 8px;
+}
+
+.auth-layout__form h5 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+    margin: 0 0 32px;
+}
+
+.registration__input {
+    position: relative;
+}
+
+.registration__input input {
+    width: 416px;
+    height: 56px;
+    background: var(--grey5);
+    border-radius: 4px 4px 0 0;
+    border-style: none;
+    border-bottom: 1px solid var(--grey20);
+    outline: none;
+    padding: 26px 12px 0;
+}
+
+.registration__input-password {
+    margin: 18px 0 20px;
+}
+
+.registration__hint {
+    padding-left: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--grey40);
+}
+
+.registration__placeholder {
+    position: absolute;
+    pointer-events: none;
+    top: 19px;
+    left: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+}
+
+.registration__input input:focus ~ .registration__placeholder,
+.registration__input input:not(:focus):invalid ~ .registration__placeholder {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--grey40);
+}
+
+.registration__input-password input:focus ~ .auth__button--show-password,
+.registration__input-password input:not(:invalid) ~ .auth__button--show-password {
+    display: block;
+}
+
+.auth__button--show-password {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: url('../../assets/images/eye-closed.svg') 50% 50% no-repeat;
+    cursor: pointer;
+}
+
+.auth__button--show-password.show {
+    background-image: url('../../assets/images/eye-opened.svg');
+}
+
+.auth-layout__form p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--grey40);
+    padding-left: 13px;
+}
+
+.registration__button {
+    width: 416px;
+    height: 52px;
+    border-radius: 30px;
+    border-style: none;
+    margin: 30px 0 16px;
+    background: linear-gradient(var(--btn-hover));
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.registration__button:disabled {
+    background: var(--grey10);
+}
+
+.auth-layout__form > span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: var(--grey70);
+}
+
+.registration__registration {
+    display: flex;
+}
+
+.registration__registration a {
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: var(--dark);
+}
+
+.registration__registration img {
+    padding-left: 15px;
+}

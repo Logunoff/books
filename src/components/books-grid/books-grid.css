@@ -1,0 +1,26 @@
+.books__error {
+    margin-top: 200px;
+    width: 825px;
+    text-align: center;
+}
+
+.books__error span {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: var(--grey40);
+}
+
+@media only screen and (max-width: 320px) {
+    .books__error {
+        margin: 137px 10px 0;
+        width: 268px;
+    }
+
+    .books__error span {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}

@@ -1,0 +1,34 @@
+.form-warning {
+    display: none;
+}
+
+.form-warning.server-error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 528px;
+    max-height: 100%;
+    border-radius: 16px;
+    background-color: var(--white);
+    padding: 48px 56px;
+}
+
+.form-warning.server-error h4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+    margin-bottom: 32px;
+}
+
+.form-warning.server-error p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+.form-warning.server-error > .auth__button--submit {
+    margin: 32px 0 0;
+}

@@ -1,0 +1,188 @@
+body {
+    max-width: none;
+}
+
+.auth-layout__form.server-error {
+    display: none;
+}
+
+.auth-layout__title {
+    padding-bottom: 32px;
+}
+
+.auth__div-input {
+    position: relative;
+}
+
+.auth__input {
+    width: 416px;
+    height: 56px;
+    background: var(--grey5);
+    border-radius: 4px 4px 0 0;
+    border-style: none;
+    border-bottom: 1px solid var(--grey20);
+    outline: none;
+    padding: 26px 12px 0;
+}
+
+.auth__input-error {
+    width: 416px;
+    height: 56px;
+    background: var(--grey5);
+    border-radius: 4px 4px 0 0;
+    border-style: none;
+    outline: none;
+    padding: 26px 12px 0;
+    border-bottom: 1px solid var(--negative);
+}
+
+.auth__input-password {
+    margin: 36px 0 20px;
+}
+
+/* .auth__input-password input:focus ~ .auth__button--show-password,
+.auth__input-password input:not(:invalid) ~ .auth__button--show-password {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+.auth__button--show-password {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+.auth__button--show-password::after {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    content: url('../../assets/images/eye-closed.svg');
+}
+
+.auth__button--show-password.show::after {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    content: url('../../assets/images/eye-opened.svg');
+} */
+
+.auth__input-password input:focus ~ .auth__button--show-password,
+.auth__input-password input:not(:invalid) ~ .auth__button--show-password {
+    display: block;
+}
+
+.auth__button--show-password {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: url('../../assets/images/eye-closed.svg') 50% 50% no-repeat;
+    cursor: pointer;
+}
+
+.auth__button--show-password.show {
+    background-image: url('../../assets/images/eye-opened.svg');
+}
+
+.auth__placeholder {
+    position: absolute;
+    pointer-events: none;
+    top: 19px;
+    left: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: var(--dark);
+}
+
+.auth__input input:focus ~ .auth__placeholder,
+.auth__input input:not(:focus):valid ~ .auth__placeholder {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--grey40);
+}
+
+.auth__forgot-password {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--grey40);
+    padding-left: 13px;
+}
+
+.auth__button--submit {
+    width: 416px;
+    height: 52px;
+    border-radius: 30px;
+    border-style: none;
+    margin: 32px 0 16px;
+    background: linear-gradient(var(--btn-hover));
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: var(--white);
+    cursor: pointer;
+    outline: none;
+}
+
+.auth__form > span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: var(--grey70);
+}
+
+.auth__registration {
+    display: flex;
+}
+
+.auth__registration a {
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: var(--dark);
+}
+
+.auth__registration img {
+    padding-left: 15px;
+}
+
+.auth__error {
+    padding-left: 12px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--negative);
+}

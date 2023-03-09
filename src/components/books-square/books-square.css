@@ -1,0 +1,34 @@
+.books-square {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 21px;
+  grid-row-gap: 24px;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+  .books-square {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 35px;
+    grid-row-gap: 24px;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  .books-square {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 35px;
+    grid-row-gap: 24px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .books-square {
+    display: block;
+    margin-bottom: 38px;
+  }
+}

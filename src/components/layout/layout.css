@@ -1,0 +1,22 @@
+.main {
+    position: relative;
+    display: flex;
+    flex: 1;
+    margin: 41px 165px 0;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .main {
+        position: relative;
+
+        margin: 0 64px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .main {
+        position: relative;
+
+        margin: 24px 16px 0;
+    }
+}

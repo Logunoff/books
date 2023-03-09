@@ -1,0 +1,132 @@
+.book-card-square {
+    width: 190px;
+    height: 470px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18),
+        0px 1px 5px rgba(191, 196, 201, 0.24);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card-square__div-img {
+    width: 174px;
+    height: 242px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 18px;
+    border: 1px solid #a7a7a7;
+    border-radius: 10px;
+}
+
+.book-card-square img {
+    max-height: 240px;
+    width: 174px;
+    border-radius: 10px;
+}
+
+.book-card-square p {
+    align-items: center;
+}
+
+.book-card-square p:nth-child(2) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    margin-bottom: 22px;
+    color: var(--grey40);
+}
+
+.book-card-square p:nth-child(3) {
+    margin-top: 19px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+}
+
+.book-card-square p:nth-child(4) {
+    margin: 0 0 19px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: var(--grey70);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.book-card-square__evaluation {
+    position: relative;
+    width: 180px;
+    height: 20px;
+}
+
+.book-card-square__evaluation::before {
+    position: absolute;
+    content: url('../../assets/images/stars-square-card-view.svg');
+}
+
+.book-card-square__evaluation-empty::before {
+    content: '';
+}
+
+.book-card-square button {
+    height: 40px;
+    width: 160px;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    margin: 0 auto 8px;
+}
+
+.book-card-square__button--active {
+    border-style: none;
+    background: linear-gradient(var(--btn-hover));
+    color: var(--white);
+    text-align: center;
+}
+
+.book-card-square__button--busy {
+    background: var(--grey5);
+    border-style: none;
+    border: 1px solid var(--grey20);
+    color: var(--grey40);
+    text-align: center;
+}
+
+.book-card-square__button--booked {
+    background: var(--white);
+    border-style: none;
+    border: 1px solid var(--grey20);
+    color: var(--dark);
+    text-align: center;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .book-card-square p:nth-child(3) {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .book-card-square {
+        width: 288px;
+        padding: 8px 16px 16px;
+        margin-top: 16px;
+    }
+
+    .book-card-square button {
+        width: 256px;
+    }
+}
