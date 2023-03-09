@@ -10,10 +10,7 @@
 }
 
 .auth-layout h3 {
-    position: absolute;
-    top: 180px;
-    left: auto;
-    right: auto;
+    margin-bottom: 20px;
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
