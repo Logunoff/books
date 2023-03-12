@@ -26,6 +26,19 @@
     position: relative;
 }
 
+.reset-pass__green-mark-hide,
+.forgot-pass__input:not(:focus) ~ .reset-pass__green-mark-show,
+.forgot-pass__input:not(:valid):focus ~ .reset-pass__green-mark-show {
+    display: none;
+}
+
+.reset-pass__green-mark-show {
+    display: block;
+    position: absolute;
+    top: 86px;
+    left: 356px;
+}
+
 .reset-pass__placeholder {
     position: absolute;
     pointer-events: none;
@@ -43,7 +56,8 @@
     position: relative;
 }
 
-.reset-pass-conf__placeholder {
+.reset-pass-conf__placeholder,
+.forgot-pass__input-error:not(:focus):invalid ~ .reset-pass-conf__placeholder {
     position: absolute;
     pointer-events: none;
     top: 18px;
@@ -55,10 +69,60 @@
     color: var(--dark);
 }
 
+.forgot-pass__input-error ~ .reset-pass-conf__placeholder,
+.forgot-pass__input:focus ~ .reset-pass-conf__placeholder,
+.forgot-pass__input:not(:focus):valid ~ .reset-pass-conf__placeholder {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--grey40);
+}
+
 .reset-pass__info {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.1px;
     color: var(--grey70);
+}
+
+@media only screen and (max-width: 320px) {
+    .reset-pass-layout__form {
+        width: 288px;
+    }
+
+    .reset-pass__form {
+        padding: 24px 16px;
+    }
+
+    .reset-pass__info {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: var(--grey70);
+    }
+
+    .reset__button--show-password {
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: url('../../assets/images/eye-closed.svg') 50% 50% no-repeat;
+        cursor: pointer;
+    }
+
+    .reset-pass__green-mark-show {
+        display: block;
+        position: absolute;
+        top: 115px;
+        left: 200px;
+    }
 }

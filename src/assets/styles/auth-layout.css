@@ -36,3 +36,25 @@
     letter-spacing: 0.1px;
     color: var(--dark);
 }
+
+@media only screen and (max-width: 360px) {
+    .auth-layout h3 {
+        position: absolute;
+        top: 16px;
+        left: auto;
+        right: auto;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: var(--white);
+    }
+
+    .auth-layout__form {
+        width: 288px;
+        max-height: 100%;
+        border-radius: 16px;
+        background-color: var(--white);
+        padding: 24px 16px;
+    }
+}

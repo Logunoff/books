@@ -1,21 +1,18 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-import { apiRegistration } from '../constants/urls';
+import { apiResetPassword } from '../constants/urls';
 
-export const useRegistrationRequest = () => {
+export const useResetRequest = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [responseStatus, setResponseStatus] = useState(null);
 
-    const newUser = useSelector((state) => state.registration.registration);
-
-    const regRequest = async (data, onFinally) => {
+    const resetRequest = async (code, data) => {
         setIsLoading(true);
 
         axios
-            .post(apiRegistration, {
-                ...newUser,
+            .post(apiResetPassword, {
+                ...code,
                 ...data,
             })
             .then((response) => {
@@ -30,14 +27,11 @@ export const useRegistrationRequest = () => {
             .catch((error) => {
                 setResponseStatus(error.response.status)
             })
-            .finally(() => {
-                setIsLoading(false);
-                onFinally();
-            })
+            .finally(() => setIsLoading(false))
     };
 
     return {
-        regRequest,
+        resetRequest,
         isLoading,
         responseStatus,
     };

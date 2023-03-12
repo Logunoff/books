@@ -19,7 +19,7 @@ body {
     position: relative;
 }
 
-.registration__input input {
+/* .registration__input input {
     width: 416px;
     height: 56px;
     background: var(--grey5);
@@ -28,10 +28,10 @@ body {
     border-bottom: 1px solid var(--grey20);
     outline: none;
     padding: 26px 12px 0;
-}
+} */
 
 .registration__input-password {
-    margin: 18px 0 20px;
+    margin: 36px 0 20px;
 }
 
 .registration__hint {
@@ -43,7 +43,8 @@ body {
     color: var(--grey40);
 }
 
-.registration__placeholder {
+.registration__placeholder,
+.auth__input-error:not(:focus):invalid ~ .registration__placeholder {
     position: absolute;
     pointer-events: none;
     top: 19px;
@@ -55,8 +56,9 @@ body {
     color: var(--dark);
 }
 
+.auth__input-error ~ .auth__placeholder,
 .registration__input input:focus ~ .registration__placeholder,
-.registration__input input:not(:focus):invalid ~ .registration__placeholder {
+.registration__input input:not(:focus):valid ~ .registration__placeholder {
     position: absolute;
     top: 6px;
     left: 12px;
@@ -71,31 +73,6 @@ body {
 .registration__input-password input:not(:invalid) ~ .auth__button--show-password {
     display: block;
 }
-
-.auth__button--show-password {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: url('../../assets/images/eye-closed.svg') 50% 50% no-repeat;
-    cursor: pointer;
-}
-
-.auth__button--show-password.show {
-    background-image: url('../../assets/images/eye-opened.svg');
-}
-
-/* .auth-layout__form p {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.2px;
-    color: var(--grey40);
-    padding-left: 13px;
-} */
 
 .registration__button {
     width: 416px;
@@ -145,4 +122,49 @@ body {
 
 .registration__registration img {
     padding-left: 15px;
+}
+
+.registration__green-mark-hide,
+.registration__input-password input:not(:focus) ~ .registration__green-mark-show,
+.registration__input-password input:not(:valid):focus ~ .registration__green-mark-show {
+    display: none;
+}
+
+.registration__green-mark-show {
+    display: block;
+    position: absolute;
+    top: 26px;
+    left: 356px;
+}
+
+@media only screen and (max-width: 360px) {
+    .registration__button {
+        width: 255px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    .registration__registration {
+        display: block;
+    }
+
+    .registration__registration span {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: var(--grey70);
+    }
+
+    .registration__registration a {
+        margin-top: 7px;
+        padding-left: 0;
+    }
+
+    .registration__green-mark-show {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 200px;
+    }
 }

@@ -61,7 +61,8 @@ body {
     background-image: url('../../assets/images/eye-opened.svg');
 }
 
-.auth__placeholder {
+.auth__placeholder,
+.auth__input-error:not(:focus):invalid ~ .auth__placeholder {
     position: absolute;
     pointer-events: none;
     top: 19px;
@@ -109,6 +110,7 @@ body {
     letter-spacing: 0.2px;
     color: var(--white);
     cursor: pointer;
+    text-transform: uppercase;
     outline: none;
 }
 
@@ -149,4 +151,62 @@ body {
     line-height: 16px;
     letter-spacing: 0.2px;
     color: var(--negative);
+}
+
+@media only screen and (max-width: 360px) {
+    .auth__input {
+        width: 256px;
+        background: var(--grey5);
+        border-radius: 4px 4px 0 0;
+        border-style: none;
+        border-bottom: 1px solid var(--grey20);
+        outline: none;
+        padding: 26px 12px 0;
+    }
+
+    .auth__input-error {
+        width: 256px;
+        height: 56px;
+        background: var(--grey5);
+        border-radius: 4px 4px 0 0;
+        border-style: none;
+        outline: none;
+        padding: 26px 12px 0;
+        border-bottom: 1px solid var(--negative);
+    }
+
+    .auth__button--submit {
+        width: 255px;
+        height: 40px;
+        border-radius: 20px;
+        border-style: none;
+        margin: 32px 0 16px;
+        background: linear-gradient(var(--btn-hover));
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: var(--white);
+        cursor: pointer;
+        outline: none;
+        text-transform: uppercase;
+    }
+
+    .auth__registration {
+        display: block;
+    }
+
+    .auth__registration span {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: var(--grey70);
+    }
+
+    .auth__registration a {
+        margin-top: 7px;
+        padding-left: 0px;
+    }
 }

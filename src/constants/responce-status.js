@@ -10,7 +10,7 @@ export const STATUS_RESET_PASSWORD = {
         buttonText: 'ПОВТОРИТЬ',
     },
     default: {
-        title: 'ОШИБКА',
+        title: 'Данные не сохранились',
         info: 'Что-то пошло не так. Попробуйте ещё раз',
         buttonText: 'ПОВТОРИТЬ',
     }
@@ -41,3 +41,11 @@ export const STATUS_REGISTRATION = {
         buttonText: 'ПОВТОРИТЬ',
     }
 };
+
+export const FORGOT_PASSWORD = {
+    200: {
+        title: 'Письмо выслано',
+        info: 'Перейдите в вашу почту, чтобы воспользоваться подсказками по восстановлению пароля',
+        buttonText: '',
+    }
+}

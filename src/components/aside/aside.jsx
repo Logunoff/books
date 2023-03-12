@@ -92,7 +92,7 @@ export const Aside = ({ categories }) => {
                     <NavLink to='/profile'>Профиль</NavLink>
                 </h5>
                 <h5>
-                    <NavLink onClick={logout} to='/auth'>
+                    <NavLink data-test-id='exit-button' onClick={logout} to='/auth'>
                         Выход
                     </NavLink>
                 </h5>
