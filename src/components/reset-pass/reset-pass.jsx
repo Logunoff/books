@@ -91,22 +91,22 @@ export const ResetPass = ({ code }) => {
                                 },
                             })}
                         />
-                        {/* {hasRequiredError ? (
+                        {hasRequiredError ? (
                             <span data-test-id='hint' className='auth__error'>
                                 {errors?.password?.message}
                             </span>
-                        ) : ( */}
-                        <span
-                            data-test-id='hint'
-                            className={classNames('registration__hint', {
-                                hasErrors: hasPassFieldErrors,
-                            })}
-                        >
-                            Пароль <span className={hasMinLengthError && 'isError'}>не менее 8 символов</span>, c{' '}
-                            <span className={hasCapitalLetterError && 'isError'}>заглавной буквой</span> и{' '}
-                            <span className={hasDigitError && 'isError'}>цифрой</span>
-                        </span>
-                        {/* )} */}
+                        ) : (
+                            <span
+                                data-test-id='hint'
+                                className={classNames('registration__hint', {
+                                    hasErrors: hasPassFieldErrors,
+                                })}
+                            >
+                                Пароль <span className={hasMinLengthError && 'isError'}>не менее 8 символов</span>, c{' '}
+                                <span className={hasCapitalLetterError && 'isError'}>заглавной буквой</span> и{' '}
+                                <span className={hasDigitError && 'isError'}>цифрой</span>
+                            </span>
+                        )}
                         {errors?.password && (
                             <img
                                 data-test-id='checkmark'
