@@ -26,7 +26,18 @@ export const ResetPass = ({ code }) => {
         handleSubmit,
     } = useForm({
         mode: 'all',
+        criteriaMode: 'all',
+        resetOptions: {
+            keepErrors: true,
+        },
     });
+    const hasError = errors.password;
+
+    const hasRequiredError = hasError && errors.password.types.required;
+    const hasDigitError = hasError && errors.password.types.hasDigit;
+    const hasCapitalLetterError = hasError && errors.password.types.hasCapitalLetter;
+    const hasMinLengthError = hasError && errors.password.types.minLength;
+    const hasPassFieldErrors = hasMinLengthError || hasDigitError || hasCapitalLetterError;
 
     const toAuth = () => navigate('/auth');
     const toReg = () => window.location.reload();
@@ -73,16 +84,29 @@ export const ResetPass = ({ code }) => {
                             className={errors?.password ? 'forgot-pass__input-error' : 'forgot-pass__input'}
                             {...register('password', {
                                 required: 'Поле не может быть пустым',
-                                minLength: {
-                                    value: 8,
-                                    message: 'Пароль не менее 8 символов, с заглавной буквой и цифрой',
-                                },
-                                pattern: {
-                                    value: /^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-                                    message: 'Пароль не менее 8 символов, с заглавной буквой и цифрой',
+                                minLength: { value: 8 },
+                                validate: {
+                                    hasDigit: (v) => Boolean(v.match(/\d/g)),
+                                    hasCapitalLetter: (v) => Boolean(v.match(/[A-ZА-Я]/g)),
                                 },
                             })}
                         />
+                        {/* {hasRequiredError ? (
+                            <span data-test-id='hint' className='auth__error'>
+                                {errors?.password?.message}
+                            </span>
+                        ) : ( */}
+                        <span
+                            data-test-id='hint'
+                            className={classNames('registration__hint', {
+                                hasErrors: hasPassFieldErrors,
+                            })}
+                        >
+                            Пароль <span className={hasMinLengthError && 'isError'}>не менее 8 символов</span>, c{' '}
+                            <span className={hasCapitalLetterError && 'isError'}>заглавной буквой</span> и{' '}
+                            <span className={hasDigitError && 'isError'}>цифрой</span>
+                        </span>
+                        {/* )} */}
                         {errors?.password && (
                             <img
                                 data-test-id='checkmark'
@@ -94,15 +118,6 @@ export const ResetPass = ({ code }) => {
                             />
                         )}
                         <span className='forgot-pass__placeholder'>Новый пароль</span>
-                        {errors?.password ? (
-                            <span data-test-id='hint' className='auth__error'>
-                                {errors?.password?.message}
-                            </span>
-                        ) : (
-                            <span data-test-id='hint' className='registration__hint'>
-                                Пароль не менее 8 символов, с заглавной буквой и цифрой
-                            </span>
-                        )}
                         <button
                             data-test-id={showPassword ? 'eye-opened' : 'eye-closed'}
                             aria-label='reset__button-password'
