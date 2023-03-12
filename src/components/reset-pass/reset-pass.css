@@ -126,3 +126,11 @@
         left: 200px;
     }
 }
+
+.registration__hint span.isError {
+    color: var(--negative);
+}
+
+input:not(:focus) + .registration__hint.hasErrors {
+    color: var(--negative);
+}
